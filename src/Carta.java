@@ -46,6 +46,23 @@ public class Carta {
     }
 
     /**
+     * Obtiene una carta de la baraja a partir de su número y palo.
+     *
+     * @param numero La inicial del número de la carta.
+     * @param palo La inicial del palo de la carta.
+     * @return La carta encontrada.
+     * @throws Exception Si no se encuentra una carta con el número y palo especificados.
+     */
+    public static Carta getCarta(char numero, char palo) throws Exception {
+        for (int i = 0; i < LISTA.size(); i++) {
+            if (LISTA.get(i).NUMERO.inicial == numero && LISTA.get(i).PALO.inicial == palo) {
+                return LISTA.get(i);
+            }
+        }
+        throw new Exception("El número o palo no existe");
+    }
+
+    /**
      * Devuelve una representación en cadena de la carta.
      *
      * @return Una cadena que contiene el número y el palo de la carta.
